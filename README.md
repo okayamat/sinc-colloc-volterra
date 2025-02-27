@@ -15,10 +15,13 @@ Those problems are solved by means of the following 5 methods:
 The name of the program denotes the method and example number. For
 example, SE_nyst_ex1.c denotes the SE-Sinc-Nyström method for Example 1,
 and RZ_coll_ex2.c denotes the SE-Sinc-collocation method by Rashidinia
-and Zarebnia for Example 2. LAPACK in Apple's Accelerate framework is
-used for computation of the system of linear equations. If you want to
-use another LAPACK library, modify make files according to your
-installation.
+and Zarebnia for Example 2.
+
+Cephes Math Library is used for computation of the sine integral, and
+necessary files (mconf.h, polevl.c, sici.c) are included. LAPACK in
+Apple's Accelerate framework is used for computation of the system of
+linear equations. If you want to use another LAPACK library, modify
+make files according to your installation.
 
 Each program solves those problems increasing N as N = 5, 10, 15, 20, ...,
 and outputs N, maximum error over the target interval, and computation
