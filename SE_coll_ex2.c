@@ -71,7 +71,7 @@ double* substitute_AN(double a, double b, double h, int N, int n, double* t_N)
 double* substitute_fN(int N, int n, double* t_N)
 {
   int i;
-  double* f_N = AllocVec(n);
+  double* f_N = AllocVec(n+2);
 
   for (i = -N; i <= N; i++) {
     f_N[i+N] = g(t_N[i+N]);
@@ -80,19 +80,15 @@ double* substitute_fN(int N, int n, double* t_N)
   return f_N;
 }
 
-double* calculate_cN(double h, int N, int n, double* f_N)
+void translate_fN(double h, int N, int n, double* f_N)
 {
   int j;
-  double* c_N = AllocVec(n+2);
+  f_N[n+1] = f_N[n-1];
+  f_N[n]   = f_N[0];
 
-  for (j = -N; j <= N; j++) {
-    c_N[j+N] = f_N[j+N] - f_N[0]*waSE(j*h) - f_N[n-1]*wbSE(j*h);
+  for (j = N; j >= -N; j--) {
+    f_N[j+N] = f_N[j+N] - f_N[n]*waSE(j*h) - f_N[n+1]*wbSE(j*h);
   }
-
-  c_N[n]  = f_N[0];
-  c_N[n+1]= f_N[n-1];
-
-  return c_N;
 }
 
 int main()
@@ -101,7 +97,7 @@ int main()
   double b = 1.0;
   double d = 3.14;
   double alpha = 0.5;
-  double *A_N, *f_N, *t_N, *c_N;
+  double *A_N, *f_N, *t_N;
   int i, n, N, info;
   double h, err, maxerr, t;
   int SAMPLE = 2048;
@@ -124,12 +120,12 @@ int main()
     if ( info == 0 ) {
 
       maxerr = 0;
-      c_N = calculate_cN(h, N, n, f_N);
+      translate_fN(h, N, n, f_N);
 
       for (i = 1; i < SAMPLE; i++) {
         t = a + i*hh;
 
-        err = fabs(u(t) - vSEn(a, b, t, h, N, c_N, n));
+        err = fabs(u(t) - vSEn(a, b, t, h, N, f_N, n));
 
         maxerr = fmax(err, maxerr);
       }
