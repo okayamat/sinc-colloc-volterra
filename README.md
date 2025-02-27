@@ -33,7 +33,7 @@ computation environment:
 OS: Mac OS Big Sur  
 CPU: 1.7 GHz Intel Core i7  
 Memory: 8 GB 1600 MHz DDR3  
-Compiler: Apple clang version 13.0.0
+Compiler: Apple clang version 13.0.0  
 Library: LAPACK (Apple's Accelerate framework)
 
 ## References
