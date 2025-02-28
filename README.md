@@ -46,7 +46,7 @@ Library: LAPACK (Apple's Accelerate framework)
  pp. 269--286.
 2. T. Okayama: On the relation between two Sinc-collocation methods for
  Volterra integral equations of the second kind and further improvement,
- arXiv.
+ arXiv:2502.20221 [math.NA], Feb 2025.
 3. J. Rashidinia and M. Zarebnia: Solution of a Volterra integral equation by
  the sinc-collocation method, J. Comput. Appl. Math., Vol. 206 (2007),
  pp. 801--813.
