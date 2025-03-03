@@ -44,8 +44,8 @@ Library: LAPACK (Apple's Accelerate framework)
  of integral equations by means of the Sinc collocation method based on the
  double exponential transformation, J. Comput. Appl. Math., Vol. 177 (2005),
  pp. 269--286.
-2. T. Okayama: On the relation between two Sinc-collocation methods for
- Volterra integral equations of the second kind and further improvement,
+2. T. Okayama: On the relationship between two Sinc-collocation methods for
+ Volterra integral equations of the second kind and their further improvement,
  arXiv:2502.20221 [math.NA], Feb 2025.
 3. J. Rashidinia and M. Zarebnia: Solution of a Volterra integral equation by
  the sinc-collocation method, J. Comput. Appl. Math., Vol. 206 (2007),
