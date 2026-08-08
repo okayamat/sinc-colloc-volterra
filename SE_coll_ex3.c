@@ -112,7 +112,7 @@ int main()
   clock_t start, end;
   double time;
 
-  for (N = 5; N <= 200; N += 5) {
+  for (N = 5; N <= 400; N += 5) {
     start = clock();
 
     n = 2*N+1;
