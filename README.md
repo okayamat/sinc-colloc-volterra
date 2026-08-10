@@ -110,7 +110,7 @@ The main results for Example 3 use `omega = 20.0`. To reproduce the frequency
 comparison in Table 4 of [2], edit
 
 ```c
-const double omega = 20.0;
+double omega = 20.0;
 ```
 
 in each `*_ex3.c` program, replacing `20.0` successively with `5.0`, `10.0`,
